@@ -1,3 +1,53 @@
+* {
+  border: solid black;
+}
+
 body {
   background: papayawhip;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+.a,
+.f {
+  width: 100%;
+}
+
+.b {
+  width: 100%;
+}
+
+.c,
+.d,
+.e {
+  width: 30%;
+}
+
+@media (min-width: 600px) {
+
+  .b {
+    width: 75%;
+    align-items: flex-start;
+  }
+
+  .c,
+  .d,
+  .e,
+  .f {
+    align-items: flex-end;
+    width: 24%;
+    height: 30vh;
+  }
+
+  .f {
+    height: 60vh;
+  }
 }
