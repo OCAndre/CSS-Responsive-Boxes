@@ -1,5 +1,6 @@
 * {
   border: solid black;
+  box-sizing: border-box;
 }
 
 body {
@@ -9,45 +10,72 @@ body {
 .container {
   display: flex;
   min-height: 100vh;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   text-align: center;
 
 }
 
 .a,
+.wrapper,
 .f {
-  width: 100%;
+  flex-grow: 1;
+  margin: .5em;
+  max-height: 10vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 3;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70vh;
+}
+
+aside {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  min-height: 20vh;
+}
+
+aside>div {
+  flex-grow: 10;
+  margin: .5em;
 }
 
 .b {
-  width: 100%;
-}
-
-.c,
-.d,
-.e {
-  width: 30%;
+  width: 90%;
+  flex-grow: 3;
+  margin: .5em;
 }
 
 @media (min-width: 600px) {
-
-  .b {
-    width: 75%;
-    align-items: flex-start;
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
-  .c,
-  .d,
-  .e,
-  .f {
-    align-items: flex-end;
-    width: 24%;
-    height: 30vh;
+  .a {
+    width: 100%;
+  }
+
+  header {
+    width: 100%;
+    max-height: 10vh;
+  }
+
+  .wrapper {
+    justify-content: stretch;
+    flex-basis: 70%;
+    min-height: 80vh;
   }
 
   .f {
-    height: 60vh;
+    margin: .5em;
+    flex-grow: 3;
+    min-height: 80vh;
   }
 }
